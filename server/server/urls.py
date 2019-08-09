@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from product import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/products/$', views.product_list),
+    url(r'^api/products/(?P<pk>[0-9]+)$', views.product_detail),
 ]
